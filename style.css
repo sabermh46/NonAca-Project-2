@@ -1,0 +1,119 @@
+* {
+    padding: 0;
+    margin: 0;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+}
+:root {
+    --blue: #6c93cc;
+    --dark-blue: #2a3d81;
+}
+
+body{
+    position: relative;
+    min-height: 100vh;
+    background: var(--dark-blue);
+    display: -ms-grid;
+    display: grid;
+    place-items: center;
+}
+
+img.pic {
+    opacity: 0.5;
+    width: 500px;
+    outline: 1px solid white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+}
+.cir1 {
+    height: 0px;
+    width: 0px;
+    border-radius: 280px;
+    background: var(--blue);
+    position: relative;
+    -webkit-animation: main 1s ease 0.5s 1 forwards;
+            animation: main 1s ease 0.5s 1 forwards;
+}
+.cir1::before, .cir1::after {
+    content: '';
+    height: 0px;
+    width: 0px;
+    border-radius: 200px;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+    position: absolute;
+    border: 27px solid var(--dark-blue);
+    left: -90px;
+    opacity: 0;
+    -webkit-animation: c 1s ease 1.5s 1 forwards;
+            animation: c 1s ease 1.5s 1 forwards;
+}
+.cir1::after {
+    left: 127px;
+}
+
+.cir2 {
+    height: 280px;
+    width: 280px;
+    border-radius: 280px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.cir2::before, .cir2::after {
+    content: '';
+    height: 0px;
+    width: 0px;
+    border-radius: 200px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+            transform: translateX(-50%);
+    position: absolute;
+    border: 27px solid var(--dark-blue);
+    top: 129px;
+    opacity: 0;
+    -webkit-animation: c 1s ease 1.5s 1 forwards;
+            animation: c 1s ease 1.5s 1 forwards;
+}
+.cir2::after {
+    top: -90px;
+}
+
+@-webkit-keyframes c {
+    to {
+        height: 190px;
+        width: 190px;
+        opacity: 1;
+    }
+}
+
+@keyframes c {
+    to {
+        height: 190px;
+        width: 190px;
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes main {
+    to {
+        height: 280px;
+        width: 280px;
+        opacity: 1;
+    }
+}
+
+@keyframes main {
+    to {
+        height: 280px;
+        width: 280px;
+        opacity: 1;
+    }
+}
